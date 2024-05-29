@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    text-decoration: none;
+    color: var(--light);
+}
+
+:root {
+    --dark: 0, 0, 12;
+    --light: rgb(248, 248, 248);
+    --dark-secondary: rgb(15, 15, 40);
+    --light-secondary: rgb(137, 137, 137);
+    --accent-blue: rgb(38, 171, 216);
+    --accent-orange: rgb(239, 147, 39);
+    --box-shadow: 0px 0px 15px 6px rgba(137, 137, 137, 0.3);
+}
+
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(var(--dark));
+}
+
+.bg {
+    background-image: url(assets/bg.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: rgb(var(--dark));
+}
+
+nav {
+    background-color: rgba(var(--dark), 0.55);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav a:hover {
+    animation: LoopPulse 3s infinite;
+}
+
+nav img {
+        width: 2rem;
+        margin-left: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    gap: 2.2rem;
+    margin-right: 2rem;
+}
+
+nav ul li{
+    padding: 1.2rem 0rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--light);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+.hamburger-item {
+    display: block;
+    width: 2.4rem;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: var(--light);
+    border-radius: 1rem;
+}
+
+.nav > a  {
+    margin-right: 2rem;
+}
+
+
+#intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 10%, rgba(0,0,12,1) 100%), url(assets/intro-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+h1 {
+    color: var(--light);
+    font-size: 3.8rem;
+    width: 46rem;
+    font-weight: 900;
+    line-height: 100%;
+}
+
+.accent {
+    color: var(--accent-blue);
+}
+
+.accent:nth-child(2) {
+    color: var(--accent-orange);
+}
+
+#intro p {
+    color: var(--light-secondary);
+    width: 34rem;
+}
+
+.intro-btns {
+    display: flex;
+    gap: 2rem;
+}
+
+.intro-btns a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px var(--accent-blue) solid;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    background-color: var(--accent-blue);
+}
+
+.intro-btns a:nth-child(2) {
+    color: var(--accent-orange);
+    border: 2px var(--accent-orange) solid;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+}
+
+.intro-btns a:hover {
+    scale: 1.05;
+    transition: 0.5s ease;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--light-secondary);
+    width: 85%;
+    text-align: center;
+    margin: auto;
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 10vw;
+}
+
+h2 {
+    color: var(--light);
+    font-size: 2.6rem;
+    text-decoration: underline solid 5px var(--accent-orange);
+    text-underline-offset: 0.7rem;
+    font-weight: bold;
+}
+
+#about div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem
+
+}
+
+#about p {
+    width: 40vw;
+    color: var(--light);
+    text-align: justify;
+}
+
+#about img {
+    width: 26rem;
+    height: 26rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+#projects {
+    margin-top: 15vw;
+}
+
+#projects h2 {
+    text-decoration-color: var(--accent-blue);
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.projects-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0rem 2rem;
+}
+
+.projects-card {
+    width: 24rem;
+    height: 20rem;
+    background-color: var(--dark-secondary);
+    border: 2px solid var(--accent-blue);
+    border-radius: 0.75rem;
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+}
+
+.projects-card:hover {
+    scale: 1.02;
+    transition: 0.6s ease;
+}
+
+.projects-card img {
+    width: 100%;
+    height: 35%;
+    object-fit: cover;
+    border-radius: 0.75rem 0.75rem 0rem 0rem;
+    filter: blur(0.12rem) brightness(50%);
+    
+}
+
+.projects-card-core {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 60%;
+}
+
+.projects-card-core div {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+h3 {
+    color: var(--light);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.projects-card-core div p {
+    color: var(--light);
+}
+
+.projects-card-core > p {
+    color: var(--light-secondary);
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin: 15vw 5rem 0rem;
+}
+
+#contact div {
+    width: 24rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    color: var(--light);
+}
+
+label {
+    color: var(--light);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.contact-input {
+    background-color: var(--dark-secondary);
+    font-size: 1rem;
+    margin: 0.4rem 0rem 1.4rem;
+    border: 0.5px solid var(--light-secondary);
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    width: 40rem;
+}
+
+input[type=text], textarea[type=text] {
+    color: var(--light);
+}
+
+form button {
+    width: 100%;
+    margin: auto;
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    color: var(--light);
+    background-color: var(--accent-orange);
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--dark-secondary);
+    text-align: center;
+    margin-top: 15vw;
+}
+
+footer h3 {
+    padding: 2rem;
+}
+
+svg {
+    width: 2rem;
+}
+
+path {
+    fill: var(--light);
+}
+
+footer a:hover path {
+    fill: var(--accent-blue);
+    animation: LoopPulse 3s infinite;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer p {
+    color: var(--light-secondary);
+    padding: 3rem 0rem 0.6rem;
+}
+
+.project-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 95vh;
+}
+
+.project-intro-hero {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.project-intro-text {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+
+.project-info {
+    margin-top: 15vw;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.project-info div {
+    width: 24rem;
+}
+
+.project-info h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-info p {
+    text-align: justify;
+}
+
+.project-info-technology {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-info-technology span {
+    background-color: var(--accent-orange);
+    padding: 0.6rem;
+    border-radius: 2.5rem;
+}
+
+.project-btn {
+    margin-top: 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+.project-btn a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--accent-blue);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+.project-btn a:hover {
+    scale: 1.02;
+    transition: 0.3s ease;
+}
+
+
+@keyframes LoopPulse {
+    0% {
+        color: var(--accent-blue);
+        fill: var(--accent-blue);
+    }
+
+    50% {
+        color: var(--accent-orange);
+        fill: var(--accent-orange);
+    }
+
+    100% {
+        color: var(--accent-blue);
+        fill: var(--accent-blue);
+    }
+}
+
+@media (max-width: 1435px) {
+    #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact div h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1150px) {
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about h2 {
+         text-align: center;
+    }
+
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1040px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 750px) {
+    html {
+        font-size: 14px;
+    }
+
+    #intro h1 {
+        font-size: 3rem;
+        width: 36rem;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 630px) {
+    .contact-input {
+        width: 24rem;
+    }
+}
+
+@media (max-width: 510px) {
+    html {
+        font-size: 12px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .hamburger-item:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .hamburger-item:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .hamburger-item:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar{
+        position: fixed;
+        opacity: 0;
+        top: 4rem;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(var(--dark), 0.55);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .navbar li {
+        padding-top: 0.6rem;
+    }
+
+    .navbar.active {
+        opacity: 1;
+    }
+
+    #intro {
+        height: 95vh;
+    }
+
+    #intro h1 {
+        font-size: 2.5rem;
+        width: 25rem;
+    }
+
+    #intro p {
+        width: 23rem;
+    }
+
+    #about p {
+        width: 20rem;
+    }
+
+    #about img {
+        width: 22rem;
+        height: 22rem;
+    }
+}
