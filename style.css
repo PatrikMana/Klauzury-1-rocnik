@@ -27,6 +27,7 @@ html {
 
 body {
     background-color: rgb(var(--dark));
+    overflow-x: hidden;
 }
 
 .bg {
